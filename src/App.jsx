@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Show from './show'
+import Show from './components/show'
 import Home from './Home';
-import Singleshow from './Singleshow';
+import Singleshow from './components/Singleshow';
 
 function App() {
   return (

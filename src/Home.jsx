@@ -1,4 +1,4 @@
-import Show from './show'
+import Show from './components/show'
 import { useEffect, useState } from 'react'
 
 function Home (){
