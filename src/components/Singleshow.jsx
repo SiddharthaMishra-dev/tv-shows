@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+import noCoverImage from "../assets/no-cover-image.jpg";
+
 const Singleshow = () => {
   const { showId } = useParams();
   const [object, setObject] = useState({});
@@ -28,7 +30,7 @@ const Singleshow = () => {
     <div className="container mt-5 p-3 text-center d-flex flex-column">
       <h1>{object.name}</h1>
       <img
-        src={object.image !== undefined ? object.image.original : ""}
+        src={object.image !== undefined ? object.image.original : noCoverImage}
         alt={object.name}
         className="mb-3  m-auto"
         style={{
@@ -50,14 +52,27 @@ const Singleshow = () => {
         {object.ended}
       </p>
       <p>
-        <span className="fw-bold">Genres - </span>
-        {object.genres.map((genre) => (
-          <span>{genre} </span>
-        ))}
+        {/* {object.genres ?
+        (<span className="fw-bold">Genres - </span>
+       ( object.genres.map((genre) => <span>{ genre}</span>))
+        )
+
+        : null} */}
+        {object.genres ? (
+          <>
+            <span className="fw-bold">Genres - </span>
+            {object.genres.map((genre, index) => (
+              <span key={index}>
+                {genre}
+                {index < object.genres.length - 1 ? ", " : ""}
+              </span>
+            ))}
+          </>
+        ) : null}
       </p>
       <p>
         <span className="fw-bold">Country - </span>
-        {object.network.country.name}
+        {object.network.country !== undefined ? object.network.country.name : null}
       </p>
       <button
         className="btn btn-primary btn-lg"

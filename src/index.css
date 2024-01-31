@@ -1,7 +1,13 @@
-a{
-    color:#fff;
-    text-decoration: none;
+a {
+  color: #fff;
+  text-decoration: none;
 }
-.show{
-    background-color: antiquewhite;
+.show {
+  background-color: antiquewhite;
+  border-radius: 7px;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 42/59;
 }

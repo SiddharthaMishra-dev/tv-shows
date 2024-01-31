@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
+import noCoverImage from "../assets/no-cover-image.jpg";
 
 const Show = ({ show }) => {
-  console.log(show.show.image);
   return (
     <>
       <div className="col-lg-2 m-3 p-4 show text-center">
         <img
-          src={show.show.image !== null ? show.show.image.medium : "../assets/no-cover-image.jpg"}
+          src={show.show.image !== null ? show.show.image.medium : noCoverImage}
           alt={show.show.name}
+          className="image"
         />
         <h2>{show.show.name}</h2>
         <p>{show.show.status}</p>
